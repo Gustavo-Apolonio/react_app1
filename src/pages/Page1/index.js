@@ -6,9 +6,11 @@ export default function Page1() {
     return (
         <div>
             <h1>Página 1</h1>
-            <Link to="/">Voltar</Link>
+            <Link to="/">Voltar à home</Link>
             <br />
             <Link to="/pagina2">Ir para página 2</Link>
+            <br />
+            <Link to="/pagina3">Ir para página 3</Link>
         </div>
     );
 }
