@@ -36,6 +36,8 @@ export default function Page3() {
             <Link to="/pagina1">Ir para página 1</Link>
             <br />
             <Link to="/pagina2">Ir para página 2</Link>
+            <br />
+            <Link to="/pagina4">Ir para página 4</Link>
         </div>
     );
 }
