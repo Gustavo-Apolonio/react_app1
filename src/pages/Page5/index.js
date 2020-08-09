@@ -21,6 +21,8 @@ export default function Page5() {
             <Link to="/pagina3">Ir para página 3</Link>
             <br />
             <Link to="/pagina4">Ir para página 4</Link>
+            <br />
+            <Link to="/pagina6">Ir para página 6</Link>
         </div>
     );
 }

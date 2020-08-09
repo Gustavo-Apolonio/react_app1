@@ -11,6 +11,7 @@ import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
 import Page4 from './pages/Page4'
 import Page5 from './pages/Page5'
+import Page6 from './pages/Page6'
 import NotFound from './pages/NotFound'
 
 
@@ -24,6 +25,7 @@ export default function Routes() {
                 <Route path="/pagina3" component={Page3} />
                 <Route path="/pagina4" component={Page4} />
                 <Route path="/pagina5" component={Page5} />
+                <Route path="/pagina6" component={Page6} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </BrowserRouter>
