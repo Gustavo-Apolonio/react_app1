@@ -25,7 +25,24 @@ export default function Page4() {
         setIdade2(novoIdade);
     }
 
-    const [checkBox, setCheckbox] = useState("");
+    let checkBox = [];
+    const [checkBox2, setCheckBox2] = useState([]);
+    
+    const lista = [];
+    const adicionarLinguagem = (item) => {
+        lista.push(item);
+        checkBox = lista;
+    }
+    const removerLinguagem = (item) => {
+        lista.push(item);
+        checkBox = lista;
+    }
+    const botaoClickLinguagem = () => {
+        setCheckBox2(checkBox);
+    }
+
+    const [sexo, setSexo] = useState("");
+    const [data, setData] = useState("");
 
     
 
@@ -53,48 +70,66 @@ export default function Page4() {
                 <h3> {idade} </h3>
             </div>
 
-            {/* <div>
-                <label>Idade : </label>
-                <input type="number"
-                       name="idade"
-                       placeholder="Idade aqui..."
-                       onChange={alterouIdade} />
-                <button onClick={botaoClickIdade}>Alterar Idade</button>
-                <h3> {idade} </h3>
-            </div> */}
-
-            {/* falta terminar */}
-
-            {/* <div>
-                <input type="number"
-                    placeholder="Escreva aqui..."
-                    onChange={(e) => {Number(setMensagem(e.target.value))}}/>
-                <button onClick={botaoClick}>Clique se for capaz</button>
-            </div>
             <div>
+                <div>
+                    <h1>Linguagens</h1>
+                </div>
+                <label>C# : </label>
                 <input type="checkbox"
-                    placeholder="Escreva aqui..."
-                    onChange={(e) => {setMensagem(Boolean(e.target.checked))}}/>
-                <button onClick={botaoClick}>Clique se for capaz</button>
-            </div>
-            <div>
-                <input type="radio"
-                    name="sexo"
-                    placeholder="Escreva aqui..."
-                    onChange={(e) => {setMensagem(e.target.checked ? 'M' : 'F')}}/> Masculinho
-                <button onClick={botaoClick}>Clique se for capaz</button>
-            </div>
-            <div>
-                <input type="radio"
-                    name="sexo"
-                    placeholder="Escreva aqui..."
-                    onChange={(e) => {setMensagem(e.target.checked ? 'F' : 'M')}}/> Feminino
-                <button onClick={botaoClick}>Clique se for capaz</button>
+                       name="linguagem"
+                       onChange={(e) => e.target.checked ? adicionarLinguagem("C#") : ''} />
+                <br />
+                <label>SQL : </label>
+                <input type="checkbox"
+                       name="linguagem"
+                       onChange={(e) => e.target.checked ? adicionarLinguagem("SQL") : ''} />
+                <br />
+                <label>JavaScript : </label>
+                <input type="checkbox"
+                       name="linguagem"
+                       onChange={(e) => e.target.checked ? adicionarLinguagem("JavaScript") : ''} />
+                <br />
+                <label>HTML : </label>
+                <input type="checkbox"
+                       name="linguagem"
+                       onChange={(e) => e.target.checked ? adicionarLinguagem("HTML") : ''} />
+                <br />
+                <label>CSS : </label>
+                <input type="checkbox"
+                       name="linguagem"
+                       onChange={(e) => e.target.checked ? adicionarLinguagem("CSS") : ''} />
+                <br />
+                <button onClick={botaoClickLinguagem}>Mostrar Linguagens</button>
+                <ul>
+                    {checkBox2.map(item => 
+                            <li key={item}>{item}</li>        
+                    )}
+                </ul>
             </div>
 
+            <div>
+                <h1>Sexo</h1>
+                <label>Masculino : </label>
+                <input type="radio"
+                       name="sexo"
+                       onChange={(e) => e.target.checked ? setSexo("M") : ''} />
+                <br />
+                <label>Feminino : </label>
+                <input type="radio"
+                       name="sexo"
+                       onChange={(e) => e.target.checked ? setSexo("F") : ''} />
 
-            <h2>{mensagem}</h2>
- */}
+                <p> {sexo} </p>
+            </div>
+
+            <div>
+                <h1>Nascimento</h1>
+                <label>Escolha sua data de nascimento : </label>
+                <input type="date"
+                       onChange={(e) => setData(Date(e.target.value))}/>
+
+                <p> {data} </p>
+            </div>
 
             <br />
             <Link to="/">Voltar à home</Link>
