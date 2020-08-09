@@ -13,6 +13,8 @@ export default function Page1() {
             <Link to="/pagina3">Ir para página 3</Link>
             <br />
             <Link to="/pagina4">Ir para página 4</Link>
+            <br />
+            <Link to="/pagina5">Ir para página 5</Link>
         </div>
     );
 }
